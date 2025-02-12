@@ -56,6 +56,20 @@ string Generate::generation(const string &input_pass){
 }
 
 /*
+    Display Functions
+*/
+void Generate::print(){
+    /*
+        grab all the new passwords
+        
+        first
+            * print out old passwords
+        second
+            * print out new passwords
+    */
+}
+
+/*
     Private methods
 */
 bool Generate::erase(){

@@ -10,13 +10,13 @@ using namespace std;
 #include <algorithm>
 
 struct Require{
-    int pass_length;
+    int max_length;
     int number_of_nums;
     int* numbers; //dynamic array for numbers
     char* special_chars; //dynamic array for special chars "%$#@"
-    int num_of_special_chars;
+    int num_of_chars;
 
-    Require(int len, int num) : pass_length(len), number_of_nums(num), num_of_special_chars(0){
+    Require(int len, int num) : max_length(len), number_of_nums(num), num_of_chars(0){
        numbers = new int[number_of_nums]; // allocate memory for numbers
        special_chars = nullptr; //initializing array as null
     }
@@ -47,6 +47,11 @@ public:
 */
     bool readPasswords(ifstream& infile);
     string generation(const string& input_pass);
+
+/*
+    Display Functions
+*/
+    void print();
 
 };
 #endif
