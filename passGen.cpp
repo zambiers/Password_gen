@@ -7,37 +7,49 @@
 using namespace std;
 
 /*
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
     Constructors
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~   
 */
 Generate::Generate(){
     input_pass = "";
 }
 Generate::~Generate(){
-
+    erase();
 }
 
 
 /*
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
     Public methods
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
 */
 
 bool Generate::readPasswords(ifstream& infile){
-    /*
-        if it's not the correct file --> return file
 
-        while it's the correct file
-            * each line = input_pass
-            * pass it to generation func()
-    */
-    return false;
+//Base Case: checks if the file is open
+    if(!infile.is_open()){
+        cout << "This is not the correct file. Returning..." << endl;
+        return false;
+    }
+//Case: file is open
+    while(get_line(infile, input_pass)){
+        generation(input_pass);
+    }
+
+    return true;
 }
 
 string Generate::generation(const string &input_pass){
 
-    if(input_pass == null){
+//Base Case: input password is null
+    if(input_pass == null || input_pass.empty()){
         cout << "Input password is NULL. Try again..." << endl;
         return input_pass;
     }
+
+    string newPass;
+
     /*
           
         take each line of file
@@ -56,12 +68,14 @@ string Generate::generation(const string &input_pass){
 }
 
 /*
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
     Display Functions
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~    
 */
 void Generate::print(){
     /*
         grab all the new passwords
-        
+
         first
             * print out old passwords
         second
@@ -70,7 +84,9 @@ void Generate::print(){
 }
 
 /*
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
     Private methods
+~{}~~~~~~~~~~~~~~~~~~~~~~{}~
 */
 bool Generate::erase(){
     return false;
