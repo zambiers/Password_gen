@@ -7,10 +7,21 @@
 using namespace std;
 
 /*
+    Constructors
+*/
+Generate::Generate(){
+    input_pass = "";
+}
+Generate::~Generate(){
+
+}
+
+
+/*
     Public methods
 */
 
-bool Generate::readPasswords(const string &filename){
+bool Generate::readPasswords(ifstream& infile){
     /*
         if it's not the correct file --> return file
 
@@ -22,16 +33,31 @@ bool Generate::readPasswords(const string &filename){
 }
 
 string Generate::generation(const string &input_pass){
+
+    if(input_pass == null){
+        cout << "Input password is NULL. Try again..." << endl;
+        return input_pass;
+    }
     /*
+          
         take each line of file
         take in requirements of password
 
-        for each letter, add two numbers
-        for each number add 1 character
+        for each letter, 
+            * add two numbers
+        for each number 
+            * add 1 character
         for each special character, add a letter
             * randomize upper and lower
     
     */
     
     return string();
+}
+
+/*
+    Private methods
+*/
+bool Generate::erase(){
+    return false;
 }
