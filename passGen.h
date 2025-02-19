@@ -1,6 +1,6 @@
 
-#ifndef PASSGEN.H
-#define PASSGEN.H
+#ifndef PASSGEN_H
+#define PASSGEN_H
 using namespace std;
 
 #include <string>

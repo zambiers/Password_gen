@@ -1,4 +1,5 @@
 #include "passGen.h"
+#include "passGen.cpp"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -15,19 +16,22 @@ int main(){
 
     while(infile){
         Generate pswrd;
-        int max_length, special_chars_nums, letter_nums, uppercase_nums;
+        int max_length;
+        int special_chars_nums;
+        int letter_nums;
+        int uppercase_nums;
 
-        cout "What is the max length for each password?" << endl;
-        cin << max_length;
+        cout << "What is the max length for each password?" << endl;
+        cin >> max_length;
 
-        cout "How many special character for each password?" << endl;
-        cin << special_chars_nums;
+        cout << "How many special character for each password?" << endl;
+        cin >> special_chars_nums;
 
-        cout "How many letters for each password?" << endl;
-        cin << letter_nums;
+        cout << "How many letters for each password?" << endl;
+        cin >> letter_nums;
 
-        cout "How many of said letter should be capital" << endl;
-        cin << uppercase_nums;
+        cout << "How many of said letter should be capital" << endl;
+        cin >> uppercase_nums;
 
 
         if(infile.eof()){
