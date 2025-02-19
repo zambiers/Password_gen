@@ -20,6 +20,7 @@ private:
     Functions
 */   
     bool erase();
+    bool charOrLetter(char ch);
 
 public:
 /*

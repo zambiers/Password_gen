@@ -51,63 +51,30 @@ string Generate::generation(const string& input_pass, int len, int upper_letters
 
 //data members and devices that will be needed
     string newPass;
-    // random_device rd;
-    // mt19937 gen(rd());//random number generator
-    // uniform_int_distribution<> dist(0,25);// random letter generation for lowercase
-    // int num_index = 0, special_char_index = 0;
+    int j; // temp number
+    char k; // temp char and letter
 
-    /*
-          
-        take each line of file
-        take in requirements of password
+    for(int i = 0; i <= input_pass.length(); i++){
+        if(i = isalpha(input_pass[i])){
+            //add for loop, max 2
+            j = rand();
+            input_pass.append(j)
+            i++;
+            break;
+        }
 
-        for each letter, 
-            * add two numbers
-        for each number 
-            * add 1 character
-        for each special character, add a letter
-            * randomize upper and lower
-    
-    */
-// //special char
-//     for(char ch: input_pass){
-//         if(isalpha(ch)){//if it's a letter
-//             newPass += ch;
+        else if ( !(i = isalpha(input_pass[i])) ){
+            charOrLetter(i);
+            // if(i == isdigit()){
 
-//             if(num_index < requirements.number_of_nums){
-//                 newPass += to_string(requirements.numbers[num_index++]);
-//             }
-            
-//             if(num_index < requirements.number_of_nums){
-//                 newPass += to_string(requirements.numbers[num_index++]);
-//             }
-//         }
+            // }
+            k = 'a' + rand() % 26;
+            input_pass.append(k);
+            i++;
+            break;
+        }
+    }
 
-//         else if( (isdigit(ch))){
-//             newPass += ch;
-        
-//             if(special_char_index < requirements.num_of_chars 
-//                 && requirements.special_char_index != nullptr){
-//                     newPass += requirements.special_char_index[special_char_index++];
-//             }
-//         }
-         
-//         else{
-//             newPass += ch;
-
-//             char randomLetter = 'a'  dist(gen);
-//             if(rand() % 2 == 0){
-//                 randomLetter = toupper(randomLetter);
-//             }
-//             newPass += randomLetter;
-//         }
-//     }
-
-//     if(newPass.length() > requirements.max_length){
-//         newPass += newPass.substr(0, requirements.max_length);
-//     }
-
-//     cout << "New Password: " << newPass << endl;
 
     return newPass;
 
@@ -149,5 +116,10 @@ void Generate::print(){
 ~{}~~~~~~~~~~~~~~~~~~~~~~{}~
 */
 bool Generate::erase(){
+    //TODO: Add me
     return false;
+}
+
+bool Generate::charOrLetter(char ch){
+    return isdigit(ch) || ispunct(ch);
 }
